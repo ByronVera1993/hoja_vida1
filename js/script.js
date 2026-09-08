@@ -3,6 +3,7 @@ const navMenu = document.querySelector('.nav-menu');
 const backToTop = document.querySelector('.back-to-top');
 const copyPhoneButton = document.querySelector('#copy-phone');
 const toast = document.querySelector('.toast');
+const printButtons = document.querySelectorAll('.print-button');
 
 function closeMenu() {
   menuToggle.setAttribute('aria-expanded', 'false');
@@ -62,6 +63,8 @@ window.addEventListener('scroll', () => {
 }, { passive: true });
 
 backToTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+
+printButtons.forEach((button) => button.addEventListener('click', () => window.print()));
 
 copyPhoneButton.addEventListener('click', async () => {
   try {
